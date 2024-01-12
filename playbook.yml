@@ -28,12 +28,13 @@
     - name: Clone the repository for local development
       git:
         repo: 'https://github.com/qfranklin/app.git'
-        dest: .
+        dest: app
         version: main
+        force: yes
       when: inventory_hostname == 'localhost'
 
     - name: Build and run the Docker containers for local development
-      command: docker-compose up --build
+      command: docker-compose up --build -d
       args:
         chdir: .
       when: inventory_hostname == 'localhost'
