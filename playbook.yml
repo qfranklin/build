@@ -29,7 +29,7 @@
       git:
         repo: 'https://github.com/qfranklin/app.git'
         dest: .
-        version: master
+        version: main
       when: inventory_hostname == 'localhost'
 
     - name: Build and run the Docker containers for local development
@@ -56,7 +56,7 @@
       git:
         repo: 'https://your-repository-url.git'
         dest: /path/to/your/app
-        version: master
+        version: main
 
     - name: Deploy with Docker Compose
       command: docker-compose up -d
